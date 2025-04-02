@@ -8,26 +8,32 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('sinhviens', function (Blueprint $table) {
+        Schema::create('student_manages', function (Blueprint $table) {
             $table->id();
             $table->string('MaSV');
-            $table->string('HoTen');
+            $table->string('TenSV');
             $table->date('NgaySinh');
             $table->string('GioiTinh');
             $table->string('DiaChi');
-            $table->string('SoDT');
+            $table->string('SDT');
+            $table->string('Password');
+            $table->string('Role');
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('sinhviens');
+        Schema::dropIfExists('student_manages');
     }
 };
